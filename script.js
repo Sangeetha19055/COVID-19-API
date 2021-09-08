@@ -1,10 +1,41 @@
 //-------- Header  starts ------
 const header = document.createElement("header");
 const h3tag = document.createElement("h3");
-h3tag.innerHTML = "COVID-19 CORONAVIRUS TRACKER";
+h3tag.innerHTML = "🦠 COVID-19 CORONAVIRUS TRACKER 🦠";
 header.append(h3tag);
 document.querySelector("header").append(header);
 //-------- Header   Ends here------
+
+//---------banner starts here-----
+const banner_conatiner = document.createElement("div");
+banner_conatiner.setAttribute("class", "banner-conatiner");
+
+const banner_image = document.createElement("div");
+banner_image.setAttribute("class", "banner-image");
+const bannerimg = document.createElement("img");
+bannerimg.setAttribute(
+  "src",
+  "https://pbs.twimg.com/media/EU6okhsUUAEJtoR.png"
+);
+bannerimg.setAttribute("alt", "Covid-19");
+banner_image.append(bannerimg);
+
+const banner_content = document.createElement("div");
+banner_content.setAttribute("class", "banner-content");
+banner_content.innerHTML = `
+       <h4><span>C</span>OVID-19 Alert</h4>
+        <h5>Stay At Home Quarantine To <br />Stop Corona Virus</h5>
+        <p>
+          Corona Viruses Are A Type Of Virus. There Are Many Different Kinds,
+          And Some Cause Disease. A Newly Identified Type.
+        </p>
+        <button class="button-color">Let us help</button>`;
+banner_conatiner.append(banner_image, banner_content);
+document.querySelector("nav").append(banner_conatiner);
+// document.body.append(banner_conatiner);
+
+//---------banner Ends here-----
+
 //------- Fetch Api Starts here-------------
 async function getData() {
   const dataList = await fetch("https://covid-19.dataflowkit.com/v1", {
@@ -37,20 +68,15 @@ function lastUpadte(datas) {
 function displayData(datas) {
   // ----------Table starts here------------
   const container_fluid = document.createElement("div");
-  container_fluid.setAttribute("class", "container-fluid");
+  container_fluid.classList.add("container-fluid", "mb-5");
 
   const table_responsive = document.createElement("div");
   table_responsive.classList.add("table-responsive", "table-box");
-  // table_responsive.setAttribute("class", "table-responsive");
-  // table_responsive.setAttribute("class", "table-box");
+
 
   const table = document.createElement("table");
   table.classList.add("table", "table-bordered", "table-hover");
   table.setAttribute("id", "tablevalues");
-
-  // table.setAttribute("class", "table");
-  // table.setAttribute("class", "table-bordered");
-  // table.setAttribute("class", "table-hover");
 
   const thead = document.createElement("thead");
   const trow = document.createElement("tr");
@@ -199,5 +225,11 @@ function displayCardData(datas) {
 }
 
 //---------create the table  Ends here---------
+//-------- Header  starts ------
+const footer = document.createElement("footer");
+const para = document.createElement("p");
+para.innerHTML = "👱‍♀️ Copyright © 2021 by Sangeetha 😇";
+footer.append(para);
+document.querySelector("footer").append(footer);
+//-------- Header   Ends here------
 
-// document.body.append(container_fluid);
