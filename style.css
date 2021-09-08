@@ -90,10 +90,10 @@ article h4 {
 }
 /* table heading Ends  here */
 /* table styles */
-table {
+/* table {
   border-collapse: collapse;
   width: 100%;
-}
+} */
 
 tr th {
   color: #5a5959;
