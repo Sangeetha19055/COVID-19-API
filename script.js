@@ -71,7 +71,7 @@ function displayData(datas) {
   container_fluid.classList.add("container-fluid", "mb-5");
 
   const table_responsive = document.createElement("div");
-  table_responsive.classList.add("table-responsive");
+  table_responsive.classList.add("table-responsive","table-box");
 
 
   const table = document.createElement("table");
